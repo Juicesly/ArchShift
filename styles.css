@@ -1,0 +1,622 @@
+/* General body styling */
+body {
+    cursor: url('Images/icons8-cursor-32.png') 16 16, auto;
+    margin: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('Images/wp12341380.jpg');
+    background-size: cover; /* Simplified background scaling */
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    font-family: "Arcade", sans-serif;
+    font-weight: 700;
+    box-sizing: border-box;
+    font-family: "Arcade", sans-serif;
+    font-weight: 700;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1.title-text {
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block; /* Keeps the title text inline */
+    font-family: 'Arcade', sans-serif;
+}
+@font-face {
+    font-family: 'Arcade';
+    src: url('FONTS/arcadeclassic.regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Style the "I" in "Archsift" */
+h1.title-text .highlight-i {
+    font-size: 80px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Styling for the bouncing ball */
+.bouncing-ball { /*
+    width: 25px;
+    height: 25px;
+    background-image: url(Images/icons8-black-and-white-24.png);
+    background-size: contain; /*Prevents image from scaling incorrectly*/
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    left: -2px; /* Aligns horizontally with the "i" */
+    transform: translateX(-50%);
+    top: 4px; /* Adjust height above the "i" */
+    animation: bounce 2s infinite ease-in-out;
+    animation: bounceSquish 2s infinite ease-in-out;
+    
+}
+/* Bouncing and squishing animation */
+@keyframes bounceSquish {
+    0%, 100% {
+        transform: translateY(0) scale(1, 1); /* Normal size */
+    }
+    25% {
+        transform: translateY(-40px) scale(1.2, 0.8); /* Stretch horizontally, squish vertically */
+    }
+    50% {
+        transform: translateY(0) scale(0.8, 1.2); /* Squish horizontally, stretch vertically */
+    }
+    75% {
+        transform: translateY(-20px) scale(1.1, 0.9); /* Slight bounce and squish */
+    }
+}
+/* Bouncing animation for the ball */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-40px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+.start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full height of the viewport */
+    width: 100vw;  /* Full width of the viewport */
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    position: fixed;  /* Position it fixed so it covers the whole screen */
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-image: url('Images/AdobeStock_470736409.jpeg');  /* Ensure the background is set here */
+    background-size: cover; /* Ensures it covers the entire screen */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* Start screen and sections styling */
+ .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Typography styles */
+h2, button {
+    font-family: "nelson", sans-serif;
+    font-weight: 700;
+}
+
+/* Button styles */
+button {
+    padding: 15px 30px;
+    font-size: 28px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Button hover effects */
+.menu-buttons button {
+    cursor: url('Images/icons8-cursor-32.png') 16 16, auto;
+    background: none;
+    color: white;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-family: 'Arcade', sans-serif;
+}
+
+.menu-buttons button:hover {
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    transform: translateY(-5px) scale(1.1);
+}
+
+.menu-buttons button:nth-child(odd):hover {
+    rotate: 5deg; /* Rotate right on hover for odd buttons */
+}
+
+.menu-buttons button:nth-child(even):hover {
+    rotate: -5deg; /* Rotate left on hover for even buttons */
+}
+
+/* Info section styling */
+.info-section {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    color: white;
+}
+/* Content wrapper for the credits */
+.credits-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Styling for the credits categories */
+.credits-category {
+    margin-bottom: 40px; /* More spacing between categories */
+    animation: floatSync 5s ease-in-out infinite;
+}
+@keyframes floatSync {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+.credits-category h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.credits-category p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 15px 0;
+    
+}
+
+.info-section.active {
+    display: block;
+    opacity: 1; 
+}
+/* Close button */
+.close-button {
+    cursor: url('Images/icons8-cursor-32.png') 16 16, auto;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 28px;
+    font-family: 'Arcade', sans-serif;
+    color: white;
+    background-color: transparent; /* No solid background */
+    border: 3px solid white; /* Match with the overall color scheme */
+    border-radius: 5px; /* Softer, more rounded edges */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: floatSync 5s ease-in-out infinite;
+}
+
+.close-button:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 4px 4px 0px black; /* Strong shadow for depth */
+    transform: scale(1.05); /* Slightly larger hover effect */
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+/* Overlay style for modal effect */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+/* Ensures no background color on button hover */
+button:hover {
+    background-color: transparent;
+}
+#aboutMeSection {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    border: 3px solid white; /* Hand-drawn look with black border */
+    padding: 40px;
+    width: 80%; /* Wide but responsive */
+    max-width: 600px; /* Limit max width */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-family: "Arcade", sans-serif;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+#aboutMeSection.active {
+    display: block;
+    opacity: 1;
+}
+#aboutMeSection h2 {
+    font-size: 28px;
+    color: white;
+    font-family: "Arcade", sans-serif;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    text-transform: uppercase; /* Uppercase title */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5); /* Slight shadow for hand-drawn effect */
+}
+#aboutMeSection p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 500px;
+    margin: 0 auto 30px; /* Spacing and centering */
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+    font-family: "IBM Plex Mono", monospace; 
+}
+
+/* Links Styling */
+.about-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    
+}
+
+.about-links a {
+    font-size: 24px;
+    color: white; /* Match with your aesthetic */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border: 2px solid white; /* Sketchy border effect */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin: 5px;
+    cursor: url('Images/icons8-cursor-32.png') 16 16, auto;
+}
+.about-links a:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 3px 3px 0px #000; /* Sketch-like shadow */
+}
+#aboutMeSection .close-button {
+    animation: none; /* Disable floating animation for the About Me section buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    background-color: black; /* Match your current aesthetic */
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid white; /* Same as credits button */
+    border-radius: 5px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+#aboutMeSection .close-button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05); /* Slight scaling effect */
+    box-shadow: 3px 3px 0px #000; /* Sketchy shadow effect like the credits hover */
+}
+.instructions-container {
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Keep the gap for space between WASD and spacebar sections */
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    transition: opacity 0.5s ease-in-out;
+    cursor: none;
+}
+
+/* WASD instructions */
+.wasd-instructions, .spacebar-instructions{
+    text-align: center;
+    font-family: "Arcade", sans-serif;
+    color: black;
+    font-weight: bold;
+}
+
+/* WASD key layout */
+.wasd-container {
+    display: flex;
+    flex-direction: column; /* Arrange rows vertically */
+    align-items: center; /* Center horizontally */
+    gap: 10px; /* Space between rows */
+}
+
+/* Individual rows for WASD */
+.wasd-row {
+    display: flex;
+    gap: 10px; /* Space between the keys in the second row */
+}
+.spacebar-instructions h1 {
+    margin-bottom: auto; /* Adjust this to move the text closer to the spacebar */
+}
+.spacebar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 135px; /* Adjust margin to move it down to align with ASD */
+}
+
+/* Align the single W key in the center */
+.wasd-row:first-child {
+    justify-content: center; /* Center the W key */
+}
+
+/* Individual key styles */
+.wasd-key, .spacebar-key {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    color: black;
+    background-color: white;
+    border: 4px solid white; 
+    display: flex;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    font-family: "Arcade", sans-serif;
+    position: relative;
+    transition: background-color 0.3s;
+    
+
+    
+}
+.wasd-key::before, .spacebar-key::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 5px;
+    border: 3px solid black;
+    box-shadow: 3px 3px 0px black, -3px -3px 0px black;
+    z-index: -1; /* Push the shadow behind the button */
+    animation: sketchy-border 1.5s infinite ease-in-out;
+}
+
+@keyframes sketchy-border {
+    0%, 100% {
+        box-shadow: 1px 1px 0px black, -1px -1px 0px black;
+    }
+    50% {
+        box-shadow: 3px 3px 0px black, -3px -3px 0px black;
+    }
+}
+/* Spacebar key style */
+.spacebar-key {
+    width: 300px;
+    height: 100px;
+    font-size: 40px;
+}
+
+/* Active state */
+.wasd-key.active, .spacebar-key.active {
+    background-color: black;
+    color: white;
+}.instructions-container {
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Keep the gap for space between WASD and spacebar sections */
+    width: 100vw;
+    height: 100vh;
+    transition: opacity 0.5s ease-in-out;
+}
+/* WASD key layout */
+.wasd-container {
+    display: flex;
+    flex-direction: column; /* Arrange rows vertically */
+    align-items: center; /* Center horizontally */
+    gap: 10px; /* Space between rows */
+}
+
+/* Individual rows for WASD */
+.wasd-row {
+    display: flex;
+    gap: 10px; /* Space between the keys in the second row */
+}
+
+/* Align the single W key in the center */
+.wasd-row:first-child {
+    justify-content: center; /* Center the W key */
+}
+
+/* Spacebar key style */
+.spacebar-key {
+    width: 300px;
+    height: 100px;
+    font-size: 40px;
+}
+/* Active state */
+.wasd-key.active, .spacebar-key.active {
+    background-color: black;
+    color: white;
+}
+/* Style for the space text */
+.space-text {
+    position: absolute;
+    top: 150px; /* Adjust this value to place it below the platform */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); /* Optional: Adds shadow for better visibility */
+    font-family: 'Arcade', sans-serif;
+    text-align: center;
+    opacity: 0; /* Start as invisible */
+    visibility: hidden; /* Hide it until it’s ready to appear */
+    animation: fadeIn 1s forwards; /* Apply fadeIn animation */
+}
+
+/* Keyframes for smooth fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Fully transparent */
+        visibility: hidden; /* Keeps the text hidden at the start */
+    }
+    100% {
+        opacity: 1; /* Fully opaque */
+        visibility: visible; /* Make it visible */
+    }
+}
+/* Style for the Press instruction text */
+/* Style for the Press instruction text */
+.press-text {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    font-family: 'Arcade', sans-serif; /* Ensure the font matches the game's theme */
+    position: absolute;
+    top: 200px; /* Adjust this value to position the text at the top */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text horizontally */
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    animation: fadeIn 1s forwards; /* Apply fadeIn animation */
+}
+
+/* Keyframes for smooth fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Fully transparent */
+        visibility: hidden; /* Keeps the text hidden initially */
+    }
+    100% {
+        opacity: 1; /* Fully opaque */
+        visibility: visible; /* Make it visible */
+    }
+}
+/* Game Over Screen */
+#gameOverScreen {
+    display: none; /* Initially hidden */
+    opacity: 0; /* Make it invisible initially */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 100;
+    cursor: url('Images/icons8-cursor-32.png') 16 16, auto;
+    /* NO transitions here */
+}
+/* Style for the Go Back button inside Game Over screen */
+.go-back-button {
+    cursor: url('Images/icons8-cursor-32.png') 16 16, auto;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 28px;
+    font-family: 'Arcade', sans-serif;
+    color: white;
+    background-color: transparent; /* No solid background */
+    border: 3px solid white; /* Border to match the aesthetic */
+    border-radius: 5px; /* Rounded corners */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5); /* Adds a slight shadow for a sketchy effect */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover transition */
+    animation: floatSync 5s ease-in-out infinite; /* Floating animation */
+}
+/* Hover effects for the Go Back button */
+.go-back-button:hover {
+    background-color: white; /* Changes background to white on hover */
+    color: black; /* Changes text color to black when hovered */
+    box-shadow: 4px 4px 0px black; /* Adds a box shadow for depth */
+    transform: scale(1.05); /* Slight scaling on hover for effect */
+}
+@keyframes floatSync {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+.level-container {
+    display: none; 
+    position: fixed; /* Cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black; /* Change to white for Level 2 */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    z-index: 0; /* Ensure it sits above other elements */
+    transition: opacity 1s ease;
+}
+.level-container.hidden {
+    opacity: 0;
+}
+.level-container canvas {
+    background-color: black /* Use !important to ensure it overrides inline styles */
+}
+
+.platform {
+    transition: opacity 1s ease;  /* 1 second fade effect */
+}
+

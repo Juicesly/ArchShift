@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Game Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/gvb7vit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+
+</head>
+<body>
+    <!-- Start Screen -->
+    <div class="start-screen">
+        <h1 class="title-text">
+            Archsh<span class="highlight-i">i
+                <div class="bouncing-ball"></div>
+            </span>ft
+        </h1>
+        <div class="menu-buttons">
+            <button id="startButton" class="menu-button" data-text="Start Game">Start Game</button>
+            <button id="creditsButton" class="menu-button" data-text="Credits">Credits</button>
+            <button id="aboutMeButton" class="menu-button" data-text="About Me">About Me</button>
+        </div>
+    </div>
+    <div class="instructions-container" id="instructionsContainer" style="display: none;">
+        <div class="wasd-instructions" id="wasdInstructions">
+            <h1>MOVE</h1>
+            <div id="pressText" class="press-text">
+                Press All Keys
+            </div>
+            <div class="wasd-container">
+                <div class="wasd-row">
+                    <div class="wasd-key" id="keyW">W</div>
+                </div>
+                <div class="wasd-row">
+                    <div class="wasd-key" id="keyA">A</div>
+                    <div class="wasd-key" id="keyS">S</div>
+                    <div class="wasd-key" id="keyD">D</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="spacebar-instructions" id="spacebarInstructions">
+            <h1 style="position: relative; top: 100px;">SHIFT</h1>
+            <div class="spacebar-container">
+                <div class="spacebar-key" id="keySpace">SPACE</div>
+            </div>
+        </div>
+    </div>
+    <!-- Credits Section -->
+    <div id="creditsSection" class="info-section">
+        <div class="credits-content">
+            <!-- Sound Category -->
+            <div class="credits-category">
+                <h1>Sound</h1>
+                <a href="https://www.epidemicsound.com/sound-effects/tracks/a0846181-8961-43b7-964b-9e765578ebca/" target="_blank" style="text-decoration: underline; color: white;">
+                    <p>Game Jump</p>
+                </a>
+                <a href="https://www.epidemicsound.com/track/fmLP1Ot2rN/" target="_blank" style="text-decoration: underline; color: white;">
+                    <p>Background Music</p>
+                </a>
+                <a href="https://www.epidemicsound.com/sound-effects/tracks/c0e18918-cb65-4bde-b896-a5c8f75ee31f/" target="_blank" style="text-decoration: underline; color: white;">
+                    <p>Hover</p>
+                </a>
+                <a href="https://www.epidemicsound.com/sound-effects/tracks/039bd067-bb6f-4571-9081-6ebc59196dfc/" target="_blank" style="text-decoration: underline; color: white;">
+                    <p>Key Click</p>
+                </a>
+            </div>
+            <!-- Programs Category -->
+            <div class="credits-category">
+                <h1>Programs</h1>
+                <p>Visual Studio Code</p>
+                <p>Adobe Illustrator</p>
+                <p>Premire Pro</p>
+                <p>Epidemic Sound</p>
+            </div>
+        </div>
+         <!-- Right bottom angled text -->
+        
+        <button class="close-button">Close</button>
+    </div>
+    <!-- About Me Section -->
+    <div id="aboutMeSection" class="info-section">
+        <div class="platform-container"></div>
+        <h2>About Me</h2>
+        <p> Welcome! I’m Jaden, a digital artist and game designer, blending technology and creativity to bring new ideas to life. From coding intricate web experiences to designing immersive 3D worlds, I thrive on pushing boundaries and exploring what’s possible. Let’s connect through my work and shared passion for all things digital!
+        </p>
+        <div class="about-links">
+            <a href="https://jla5939a803.myportfolio.com/portfolio" target="_blank">Portfolio</a>
+            <a href="https://www.linkedin.com/in/jaden-andrews-63b7572b3/" target="_blank">LinkedIn</a>
+            <a href="https://www.youtube.com/@juicesly7599" target="_blank">YouTube</a>
+        </div>
+
+        <button class="close-button">Close</button>
+    </div>
+    <!-- Level 1 stuff for now -->
+    <div class="level-container">
+    
+
+        <div class="level2-container" style="display: none;">
+            
+            <h2>Level 2</h2>
+            
+        </div>
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="game-over-screen">
+            <h1>GAME OVER</h1>
+            <button id="goBackButton" class="go-back-button">Go Back</button>
+        </div>
+<!-- Add this below the topmost platform in your HTML -->
+<div id="spaceText" class="space-text">
+    Press SPACE
+
+
+    <!-- JavaScript File -->
+    <script src="game.js"></script>
+</body>
+</html>
